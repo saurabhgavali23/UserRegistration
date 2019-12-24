@@ -149,4 +149,23 @@ public class JunitForUserRegistrationTest {
         boolean mobileNo = testUserRegistration.userMobileNumber(" 9665234018");
         Assert.assertEquals(false,mobileNo);
     }
+
+
+    //Test Cases For User's Password Test At Least 8 Character
+    
+    @Test
+    public void WhenGivenPassword_WithEightCharOrMore_ShouldReturnTrue() {
+
+        UserRegistration testUserRegistration = new UserRegistration();
+        boolean password = testUserRegistration.userPassword("User@1234");
+        Assert.assertEquals(true,password);
+    }
+
+    @Test
+    public void WhenGivenPassword_UnderEightChar_ShouldReturnFalse() {
+
+        UserRegistration testUserRegistration = new UserRegistration();
+        boolean password = testUserRegistration.userPassword("User@1");
+        Assert.assertEquals(false,password);
+    }
 }

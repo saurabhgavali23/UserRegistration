@@ -14,6 +14,8 @@ public class UserRegistration {
 
     private final String MOBILE_NUMBER_PATTERN = "^[0-9]{2,3}[ ][0-9]{10}$";
 
+    private final String PASSWORD = "^[a-zA-Z0-9@#$%&*]{8,}$";
+
     public boolean userFirstName(String fristName) {
 
         return fristName.matches(FIRST_NAME_PATTERN);
@@ -32,5 +34,10 @@ public class UserRegistration {
     public boolean userMobileNumber(String mobileNo) {
 
         return mobileNo.matches(MOBILE_NUMBER_PATTERN);
+    }
+
+    public boolean userPassword(String password) {
+
+        return password.matches(PASSWORD);
     }
 }
