@@ -178,4 +178,14 @@ public class JunitForUserRegistrationTest {
         boolean password = testUserRegistration.userPassword("useR@1123");
         Assert.assertEquals(true,password);
     }
+
+    //Test Case For User's Password Test At Least 1 Numeric Number
+
+    @Test
+    public void WhenGivenPassword_AtLeastOneNumericNumber_ShouldReturnTrue() {
+
+        UserRegistration testUserRegistration = new UserRegistration();
+        boolean password = testUserRegistration.userPassword("useR@1136");
+        Assert.assertEquals(true,password);
+    }
 }
