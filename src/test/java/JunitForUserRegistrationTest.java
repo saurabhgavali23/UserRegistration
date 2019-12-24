@@ -4,8 +4,9 @@ import org.junit.Test;
 
 public class JunitForUserRegistrationTest {
 
+    //Test Cases For Frist Name Of User
     @Test
-    public void WhenGivenFirstName_With3Char_ShouldReturnTrue() {
+    public void whenGivenFirstName_With3Char_ShouldReturnTrue() {
 
         UserRegistration testUserRegistration = new UserRegistration();
         boolean firstName = testUserRegistration.userFirstName("Sau");
@@ -13,7 +14,7 @@ public class JunitForUserRegistrationTest {
     }
 
     @Test
-    public void WhenGivenFirstName_Above3char_ShouldReturnTrue() {
+    public void whenGivenFirstName_Above3char_ShouldReturnTrue() {
 
         UserRegistration testUserRegistration = new UserRegistration();
         boolean firstName = testUserRegistration.userFirstName("Saurabh");
@@ -21,7 +22,7 @@ public class JunitForUserRegistrationTest {
     }
 
     @Test
-    public void WhenGivenFirstName_WithCharAndNumber_ShouldReturnFalse() {
+    public void whenGivenFirstName_WithCharAndNumber_ShouldReturnFalse() {
 
         UserRegistration testUserRegistration = new UserRegistration();
         boolean firstName = testUserRegistration.userFirstName("Sau123");
@@ -29,7 +30,7 @@ public class JunitForUserRegistrationTest {
     }
 
     @Test
-    public void WhenGivenFirstName_WithFirstSmallLatter_ShouldReturnFalse() {
+    public void whenGivenFirstName_WithFirstSmallLatter_ShouldReturnFalse() {
 
         UserRegistration testUserRegistration = new UserRegistration();
         boolean firstName = testUserRegistration.userFirstName("saurabh");
@@ -37,10 +38,53 @@ public class JunitForUserRegistrationTest {
     }
 
     @Test
-    public void WhenGivenFirstName_WithDot_ShouldReturnFalse() {
+    public void whenGivenFirstName_WithDot_ShouldReturnFalse() {
 
         UserRegistration testUserRegistration = new UserRegistration();
         boolean firstName = testUserRegistration.userFirstName("Saurabh.");
         Assert.assertEquals(false,firstName);
+    }
+
+
+    //Test Cases For Last Name Of User
+
+    @Test
+    public void whenGivenLastName_With3Char_ShouldReturnTrue() {
+
+        UserRegistration testUserRegistration = new UserRegistration();
+        boolean lastName = testUserRegistration.userLastName("Gav");
+        Assert.assertEquals(true,lastName);
+    }
+
+    @Test
+    public void whenGivenLastName_Above3char_ShouldReturnTrue() {
+
+        UserRegistration testUserRegistration = new UserRegistration();
+        boolean lastName = testUserRegistration.userLastName("Gavali");
+        Assert.assertEquals(true,lastName);
+    }
+
+    @Test
+    public void whenGivenLastName_WithCharAndNumber_ShouldReturnFalse() {
+
+        UserRegistration testUserRegistration = new UserRegistration();
+        boolean lastName = testUserRegistration.userLastName("Gavali123");
+        Assert.assertEquals(false,lastName);
+    }
+
+    @Test
+    public void whenGivenLastName_WithFirstSmallLatter_ShouldReturnFalse() {
+
+        UserRegistration testUserRegistration = new UserRegistration();
+        boolean lastName = testUserRegistration.userLastName("gavali");
+        Assert.assertEquals(false,lastName);
+    }
+
+    @Test
+    public void whenGivenLastName_WithDot_ShouldReturnFalse() {
+
+        UserRegistration testUserRegistration = new UserRegistration();
+        boolean lastName = testUserRegistration.userLastName("Gavali.");
+        Assert.assertEquals(false,lastName);
     }
 }
