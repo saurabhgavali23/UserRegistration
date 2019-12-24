@@ -87,4 +87,23 @@ public class JunitForUserRegistrationTest {
         boolean lastName = testUserRegistration.userLastName("Gavali.");
         Assert.assertEquals(false,lastName);
     }
+
+
+    //Test Cases For Email ID Of User
+
+    @Test
+    public void whenGivenEmailID_WithFullID_ShouldReturnTrue() {
+
+        UserRegistration testUserRegistration = new UserRegistration();
+        boolean emailId = testUserRegistration.userEmailId("gavalisaurabh02@gmail.com");
+        Assert.assertEquals(true,emailId);
+    }
+
+    @Test
+    public void whenGivenEmailID_WithDoubleDot_ShouldReturnFalse() {
+
+        UserRegistration testUserRegistration = new UserRegistration();
+        boolean emailId = testUserRegistration.userEmailId("gavalisaurabh02@gmail..com");
+        Assert.assertEquals(false,emailId);
+    }
 }
