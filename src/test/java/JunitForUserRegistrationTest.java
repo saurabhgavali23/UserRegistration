@@ -106,4 +106,47 @@ public class JunitForUserRegistrationTest {
         boolean emailId = testUserRegistration.userEmailId("gavalisaurabh02@gmail..com");
         Assert.assertEquals(false,emailId);
     }
+
+
+    //Test Cases For Mobile Number Of User
+
+    @Test
+    public void whenGivenMobileNumber_WithoutCountryCode_ShouldReturnFalse() {
+
+        UserRegistration testUserRegistration = new UserRegistration();
+        boolean mobileNo = testUserRegistration.userMobileNumber("9665234018");
+        Assert.assertEquals(false,mobileNo);
+    }
+
+    @Test
+    public void whenGivenMobileNumber_WithCountryCode_ShouldReturnTrue() {
+
+        UserRegistration testUserRegistration = new UserRegistration();
+        boolean mobileNo = testUserRegistration.userMobileNumber("91 9665234018");
+        Assert.assertEquals(true,mobileNo);
+    }
+
+    @Test
+    public void whenGivenMobileNumber_WithoutSpace_ShouldReturnFalse() {
+
+        UserRegistration testUserRegistration = new UserRegistration();
+        boolean mobileNo = testUserRegistration.userMobileNumber("919665234018");
+        Assert.assertEquals(false,mobileNo);
+    }
+
+    @Test
+    public void whenGivenMobileNumber_UnderTenDigit_ShouldReturnFalse() {
+
+        UserRegistration testUserRegistration = new UserRegistration();
+        boolean mobileNo = testUserRegistration.userMobileNumber("91 966523");
+        Assert.assertEquals(false,mobileNo);
+    }
+
+    @Test
+    public void whenGivenMobileNumber_WithFrontSpace_ShouldReturnFalse() {
+
+        UserRegistration testUserRegistration = new UserRegistration();
+        boolean mobileNo = testUserRegistration.userMobileNumber(" 9665234018");
+        Assert.assertEquals(false,mobileNo);
+    }
 }

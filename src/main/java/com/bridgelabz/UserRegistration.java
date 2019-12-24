@@ -12,6 +12,8 @@ public class UserRegistration {
 
     private final String EMAIL_ID_PATTERN = "^([a-zA-Z0-9]{1,}[._+-]?[0-9a-zA-Z]{1,})[@][a-zA-Z0-9]{1,}([.][a-zA-Z]{2,3}){1,2}$";
 
+    private final String MOBILE_NUMBER_PATTERN = "^[0-9]{2,3}[ ][0-9]{10}$";
+
     public boolean userFirstName(String fristName) {
 
         return fristName.matches(FIRST_NAME_PATTERN);
@@ -25,5 +27,10 @@ public class UserRegistration {
     public boolean userEmailId(String emailId) {
 
         return emailId.matches(EMAIL_ID_PATTERN);
+    }
+
+    public boolean userMobileNumber(String mobileNo) {
+
+        return mobileNo.matches(MOBILE_NUMBER_PATTERN);
     }
 }
