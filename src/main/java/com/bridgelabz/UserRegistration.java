@@ -6,10 +6,10 @@ import java.util.List;
 
 public class UserRegistration {
 
-    private final String FIRSTNAMEPATTER="^[A-Z][a-z]{2,}$";
+    private final String FIRST_NAME_PATTERN="^[A-Z][a-z]{2,}$";
 
     public boolean userFirstName(String fristName) {
 
-        return fristName.matches(FIRSTNAMEPATTER);
+        return fristName.matches(FIRST_NAME_PATTERN);
     }
 }
