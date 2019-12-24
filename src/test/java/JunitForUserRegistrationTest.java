@@ -152,7 +152,7 @@ public class JunitForUserRegistrationTest {
 
 
     //Test Cases For User's Password Test At Least 8 Character
-    
+
     @Test
     public void WhenGivenPassword_WithEightCharOrMore_ShouldReturnTrue() {
 
@@ -167,5 +167,15 @@ public class JunitForUserRegistrationTest {
         UserRegistration testUserRegistration = new UserRegistration();
         boolean password = testUserRegistration.userPassword("User@1");
         Assert.assertEquals(false,password);
+    }
+
+    //Test Cases For User's Password Test At Least 1 Upper Case
+
+    @Test
+    public void WhenGivenPassword_AtLeastOneUpperCase_ShouldReturnTrue() {
+
+        UserRegistration testUserRegistration = new UserRegistration();
+        boolean password = testUserRegistration.userPassword("useR@1123");
+        Assert.assertEquals(true,password);
     }
 }
