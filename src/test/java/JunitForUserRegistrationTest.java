@@ -175,8 +175,16 @@ public class JunitForUserRegistrationTest {
     public void WhenGivenPassword_AtLeastOneUpperCase_ShouldReturnTrue() {
 
         UserRegistration testUserRegistration = new UserRegistration();
-        boolean password = testUserRegistration.userPassword("useR@1123");
+        boolean password = testUserRegistration.userPassword("useR@11237");
         Assert.assertEquals(true,password);
+    }
+
+    @Test
+    public void WhenGivenPassword_WithoutUpperCase_ShouldReturnFalse() {
+
+        UserRegistration testUserRegistration = new UserRegistration();
+        boolean password = testUserRegistration.userPassword("user@11237");
+        Assert.assertEquals(false,password);
     }
 
     //Test Case For User's Password Test At Least 1 Numeric Number
@@ -186,6 +194,24 @@ public class JunitForUserRegistrationTest {
 
         UserRegistration testUserRegistration = new UserRegistration();
         boolean password = testUserRegistration.userPassword("useR@1136");
+        Assert.assertEquals(true,password);
+    }
+
+    @Test
+    public void WhenGivenPassword_WithoutNumericNumber_ShouldReturnFalse() {
+
+        UserRegistration testUserRegistration = new UserRegistration();
+        boolean password = testUserRegistration.userPassword("useR@user");
+        Assert.assertEquals(false,password);
+    }
+
+    //Test Case For User's Password Test Exact 1 Special Symbol
+
+    @Test
+    public void WhenGivenPassword_ExactOneSpecialSymbol_ShouldReturnTrue() {
+
+        UserRegistration testUserRegistration = new UserRegistration();
+        boolean password = testUserRegistration.userPassword("UseR@1136");
         Assert.assertEquals(true,password);
     }
 }
